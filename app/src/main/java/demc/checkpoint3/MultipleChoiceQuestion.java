@@ -18,8 +18,24 @@ public class MultipleChoiceQuestion extends Question {
         return (mAnswer == ans);
     }
 
+
     public boolean isMultipleChoiceQuestion(){
         return true;
     }
 
+    @Override
+    public boolean readInputAndCheckAnswer(Scanner input)
+    {
+        for(int i = 0; i < mOptions.length; i++) {
+            System.out.println(i + " " + mOptions[i]);
+        }
+
+        System.out.println("Enter the index of your answer ");
+        int in = input.nextInt();
+        return checkAnswer(in);
+    }
 }
+
+
+
+
